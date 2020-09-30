@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 export default () => {
 	return (
 		<View>
-			<Text>Feed Screen</Text>
+			<Text>Search Screen</Text>
 		</View>
 	);
 };
