@@ -15,7 +15,7 @@ interface IFeedScreenProps {
 // props has an any type
 export default (props: IFeedScreenProps) => {
 	return (
-		<Container>
+		<Container navigate={props.navigation.navigate}>
 			<Text>Feed Screen</Text>
 			<TouchableOpacity onPress={() => props.navigation.navigate("Search")}>
 				<Text>Search</Text>
