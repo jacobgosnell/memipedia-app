@@ -1,11 +1,8 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 
-// how to interact with Feed Screen properties
 interface IFeedScreenProps {
 	navigation: {
-		// when defining a func in an interface
-		// you must map string to arg
 		navigate: (arg: string) => void;
 	};
 }
@@ -14,7 +11,7 @@ interface IFeedScreenProps {
 export default (props: IFeedScreenProps) => {
 	return (
 		<View>
-			<Text>Feed Screen</Text>
+			<Text>Account Screen</Text>
 			<TouchableOpacity onPress={() => props.navigation.navigate("Search")}>
 				<Text>Search</Text>
 			</TouchableOpacity>

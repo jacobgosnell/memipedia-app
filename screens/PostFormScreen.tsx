@@ -14,7 +14,7 @@ interface IFeedScreenProps {
 export default (props: IFeedScreenProps) => {
 	return (
 		<View>
-			<Text>Feed Screen</Text>
+			<Text>Post Form Screen</Text>
 			<TouchableOpacity onPress={() => props.navigation.navigate("Search")}>
 				<Text>Search</Text>
 			</TouchableOpacity>
