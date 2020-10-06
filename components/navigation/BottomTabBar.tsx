@@ -1,13 +1,6 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
-
-const styles = StyleSheet.create({
-	container: {
-		backgroundColor: "tomato",
-		paddingTop: "15px",
-		paddingBottom: "15px",
-	},
-});
+import { View, TouchableOpacity } from "react-native";
+import bottomTabStyles from "../../styles/navigation/bottomTabStyles";
 
 interface IBottomTabBarProps {
 	navigate: (arg: string) => void;
@@ -16,7 +9,7 @@ interface IBottomTabBarProps {
 export default (props: IBottomTabBarProps) => {
 	const Links = ["Feed", "Search", "PostForm", "Account"];
 	return (
-		<View style={styles.container}>
+		<View style={bottomTabStyles.container}>
 			{Links.map((Link) => {
 				return (
 					<TouchableOpacity onPress={() => props.navigate(`${Link}`)}>
