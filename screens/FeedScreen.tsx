@@ -17,9 +17,6 @@ export default (props: IFeedScreenProps) => {
 	return (
 		<Container navigate={props.navigation.navigate}>
 			<Text>Feed Screen</Text>
-			<TouchableOpacity onPress={() => props.navigation.navigate("Search")}>
-				<Text>Search</Text>
-			</TouchableOpacity>
 		</Container>
 	);
 };
