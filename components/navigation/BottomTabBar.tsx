@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import bottomTabStyles from "../../styles/navigation/bottomTabStyles";
 
 interface IBottomTabBarProps {
@@ -13,7 +13,7 @@ export default (props: IBottomTabBarProps) => {
 			{Links.map((Link) => {
 				return (
 					<TouchableOpacity onPress={() => props.navigate(`${Link}`)}>
-						{Link}
+						<Text style={{ color: "white" }}>{Link}</Text>
 					</TouchableOpacity>
 				);
 			})}
