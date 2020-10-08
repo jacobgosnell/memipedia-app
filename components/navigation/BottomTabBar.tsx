@@ -1,5 +1,8 @@
 import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Ionicons from "react-native-vector-icons/Ionicons";
+
 import bottomTabStyles from "../../styles/navigation/bottomTabStyles";
 
 interface IBottomTabBarProps {
@@ -7,21 +10,20 @@ interface IBottomTabBarProps {
 }
 
 export default (props: IBottomTabBarProps) => {
-	const Links = ["Feed", "Search", "PostForm", "Account"];
 	return (
 		<View style={bottomTabStyles.container}>
-			{Links.map((Link) => {
-				return (
-					<TouchableOpacity onPress={() => props.navigate(`${Link}`)}>
-						<Text style={{ color: "white" }}>{Link}</Text>
-					</TouchableOpacity>
-				);
-			})}
+			<TouchableOpacity onPress={() => props.navigate("Feed")}>
+				<MaterialCommunityIcons name="newspaper" color="white" size={30} />
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => props.navigate("Search")}>
+				<Ionicons name="md-search" color="white" size={30} />
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => props.navigate("PostForm")}>
+				<MaterialCommunityIcons name="plus-circle" color="white" size={30} />
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => props.navigate("Account")}>
+				<MaterialCommunityIcons name="settings" color="white" size={30} />
+			</TouchableOpacity>
 		</View>
 	);
 };
-
-interface IContainerProps {
-	children: any;
-	navigate: (arg: string) => void;
-}
