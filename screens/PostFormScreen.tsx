@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
+import Container from "../components/layouts/Container";
 
 // how to interact with Feed Screen properties
 interface IFeedScreenProps {
@@ -13,11 +14,8 @@ interface IFeedScreenProps {
 // props has an any type
 export default (props: IFeedScreenProps) => {
 	return (
-		<View>
-			<Text>Post Form Screen</Text>
-			<TouchableOpacity onPress={() => props.navigation.navigate("Search")}>
-				<Text>Search</Text>
-			</TouchableOpacity>
-		</View>
+		<Container navigate={props.navigation.navigate}>
+			<Text>Post Form</Text>
+		</Container>
 	);
 };
