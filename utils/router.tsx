@@ -6,6 +6,7 @@ import FeedScreen from "../screens/FeedScreen";
 import SearchScreen from "../screens/SearchScreen";
 import AccountScreen from "../screens/AccountScreen";
 import PostFormScreen from "../screens/PostFormScreen";
+import AuthScreen from "../screens/auth/AuthScreen";
 
 import HeaderLogo from "../components/images/HeaderLogo";
 
@@ -28,8 +29,17 @@ const AppStack = createStackNavigator(
 			headerTitle: () => <HeaderLogo />,
 			headerTitleAlign: "center",
 		},
-		navigationOptions: {
-			headerTitleStyle: { alignSelf: "center" },
+	}
+);
+
+const AuthStack = createStackNavigator(
+	{
+		Auth: AuthScreen,
+	},
+	{
+		initialRouteName: "Auth",
+		defaultNavigationOptions: {
+			headerShown: false,
 		},
 	}
 );
@@ -38,9 +48,10 @@ export default createAppContainer(
 	createSwitchNavigator(
 		{
 			App: AppStack,
+			Auth: AuthStack,
 		},
 		{
-			initialRouteName: "App",
+			initialRouteName: "Auth",
 		}
 	)
 );
